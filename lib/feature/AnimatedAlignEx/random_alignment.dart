@@ -29,7 +29,6 @@ class _RandomAlignmentState extends State<RandomAlignment> {
     Alignment.topRight,
     Alignment.bottomRight,
     Alignment.bottomLeft,
-
   ];
   int num = 0;
   late Alignment alignment = positions[num];
@@ -42,6 +41,7 @@ class _RandomAlignmentState extends State<RandomAlignment> {
   int randomNumber() {
     return random.nextInt(9);
   }
+  bool isRunning = true;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,11 @@ class _RandomAlignmentState extends State<RandomAlignment> {
         duration: Duration(seconds: 2),
         curve: Curves.ease,
         onEnd: (){
+          if(!isRunning) return;
           num = (num + 1) % positions.length;
+          setState(() {
+
+          });
         },
         child: Container(width: 100, height: 100,decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -61,7 +65,8 @@ class _RandomAlignmentState extends State<RandomAlignment> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            // num = (num + 1) % positions.length;
+            isRunning = !isRunning;
+            num = (num + 1) % positions.length;
             // alignment = randomAlignment();
             // alignment = positions[randomNumber()];
           });
