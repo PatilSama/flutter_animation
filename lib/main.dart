@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'feature/AnimatedAlignEx/animated_Align_one.dart';
-import 'feature/AnimatedAlignEx/random_alignment.dart';
-import 'feature/AnimatedConainerDemos/animate_width_height.dart';
-import 'feature/AnimatedConainerDemos/border_radius_anim.dart';
-import 'feature/AnimatedConainerDemos/forground_decoration.dart';
-import 'feature/AnimatedConainerDemos/gradient_animation.dart';
-import 'feature/AnimatedConainerDemos/padding_margin.dart';
-import 'feature/AnimatedConainerDemos/transform_anim.dart';
+
+import 'feature/AnimatedSlide/animated_slide_ex.dart';
+import 'feature/AnimatedSwitcher/AnimatedSwitcherScaleExample.dart';
+import 'feature/AnimatedSwitcher/animated_switcher_ex.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:ForgroundDecoration(),
+      home:AnimatedSwitcherScaleExample(),
     );
   }
 }
